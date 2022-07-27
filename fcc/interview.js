@@ -4,4 +4,4 @@ function sym(args) {
 
 console.log(sym([1, 2, 3], [5, 2, 1, 4]));
 
-console.log(2);
+console.log(3);
