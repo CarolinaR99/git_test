@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 
-import socket
+def banner(ip, port):
+    s = socket.socket()
+    s.connect((ip, int(port)))
+    print(s.recv(1024))
 
-s = socket.socket()
+def main():
+    ip = input("Please enter the IP: ")
+    port = str(input("Please enter the port: "))
+    banner(ip, port)
 
-ip = input("Please enter the IP: ")
-port = str(input("Please enter the port: "))
-
-s.connect((ip, int(port)))
-print(s.recv(1024))
+main()
