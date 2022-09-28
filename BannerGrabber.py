@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+import socket
+
 def banner(ip, port):
     s = socket.socket()
     s.connect((ip, int(port)))
