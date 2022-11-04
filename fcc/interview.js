@@ -1,15 +1,18 @@
 function sym(args) {
   answer = [];
-  for (let i = 0; i < arguments.length - 1; i++) {
+  temp = [];
+  for (let i = 0; i < arguments.length; i++) {
     for (let j = 0; j < arguments[i].length; j++) {
-      if (arguments[i+1].includes(arguments[i][j]) == false) {
-        answer.push(arguments[i][j]);
-      }
+      temp.push(arguments[i][j]);
+    }
+  }
+  for (let k = 0; k < temp.length; k++) {
+    let count = temp.filter(x => x == temp[k]).length;
+    if (count == 1) {
+      answer.push(temp[k]);
     }
   }
   return answer;
 }
 
 console.log(sym([1, 2, 3], [5, 2, 1, 4]));
-
-console.log(1);
