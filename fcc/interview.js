@@ -30,13 +30,35 @@ function sym(args) {
         box2.push(temp2[k]);
       }}
     
-    var answer = box2;
+      if (typeof arguments[3] != "undefined") {
+        let arg2 = box2;
+        let arg_u3 = [...new Set(arguments[3])];
+        const box3 = [];
+        const temp3 = [];
+        for (let j = 0; j < arg2.length; j++) {
+          temp3.push(arg2[j]);
+        }
+        for (let j = 0; j < arg_u3.length; j++) {
+          temp3.push(arg_u3[j]);
+        }
+        for (let k = 0; k < temp3.length; k++) {
+          let count3 = temp3.filter(x => x == temp3[k]).length;
+          if (count3 == 1) {
+            box3.push(temp3[k]);
+          }}
+        
+        var answer = box3;
+      }
+      else {
+        var answer = box2;
+      }
   }
   else {
     var answer = box;
   }
+
   answer.sort();
   return answer;
 }
 
-console.log(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]));
+console.log(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]));
