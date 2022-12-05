@@ -1,6 +1,6 @@
 function sym(args) {
-  answer = [];
-  temp = [];
+  const answer = [];
+  const temp = [];
   for (let i = 0; i < arguments.length; i++) {
     for (let j = 0; j < arguments[i].length; j++) {
       temp.push(arguments[i][j]);
