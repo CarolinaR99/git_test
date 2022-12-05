@@ -12,6 +12,7 @@ function sym(args) {
       answer.push(temp[k]);
     }
   }
+  answer.sort();
   return answer;
 }
 
