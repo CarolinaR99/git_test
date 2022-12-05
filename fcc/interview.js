@@ -2,13 +2,14 @@ function sym(args) {
   const answer = [];
   const temp = [];
   for (let i = 0; i < arguments.length; i++) {
-    for (let j = 0; j < arguments[i].length; j++) {
-      temp.push(arguments[i][j]);
+    let arg_u = [...new Set(arguments[i])];
+    for (let j = 0; j < arg_u.length; j++) {
+      temp.push(arg_u[j]);
     }
   }
   for (let k = 0; k < temp.length; k++) {
-    let count = temp.filter(x => x == temp[k]).length;
-    if (count == 1) {
+    let count2 = temp.filter(x => x == temp[k]).length;
+    if (count2 == 1) {
       answer.push(temp[k]);
     }
   }
@@ -16,4 +17,4 @@ function sym(args) {
   return answer;
 }
 
-console.log(sym([1, 2, 3], [5, 2, 1, 4]));
+console.log(sym([1, 2, 3, 3], [5, 2, 1, 4]));
