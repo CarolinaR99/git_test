@@ -30,10 +30,10 @@ function sym(args) {
         box2.push(temp2[k]);
       }}
     
-    answer = box2;
+    var answer = box2;
   }
   else {
-    answer = box;
+    var answer = box;
   }
   answer.sort();
   return answer;
