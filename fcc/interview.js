@@ -62,9 +62,31 @@ function sym(args) {
               let count4 = temp4.filter(x => x == temp4[k]).length;
               if (count4 == 1) {
                 box4.push(temp4[k]);
-              }} 
+              }}
+
+              if (typeof arguments[5] != "undefined") {
+                let arg4 = box4;
+                let arg_u5 = [...new Set(arguments[5])];
+                const box5 = [];
+                const temp5 = [];
+                for (let j = 0; j < arg4.length; j++) {
+                  temp5.push(arg4[j]);
+                }
+                for (let j = 0; j < arg_u5.length; j++) {
+                  temp5.push(arg_u5[j]);
+                }
+                for (let k = 0; k < temp5.length; k++) {
+                  let count5 = temp5.filter(x => x == temp5[k]).length;
+                  if (count5 == 1) {
+                    box5.push(temp5[k]);
+                  }} 
+
+                var answer = box5;
+              }
             
+            else {
             var answer =  box4;
+            }
 
             }
         
