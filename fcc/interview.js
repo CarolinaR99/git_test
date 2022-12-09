@@ -47,7 +47,30 @@ function sym(args) {
             box3.push(temp3[k]);
           }}
         
-        var answer = box3;
+          if (typeof arguments[4] != "undefined") {
+            let arg3 = box3;
+            let arg_u4 = [...new Set(arguments[4])];
+            const box4 = [];
+            const temp4 = [];
+            for (let j = 0; j < arg3.length; j++) {
+              temp4.push(arg3[j]);
+            }
+            for (let j = 0; j < arg_u4.length; j++) {
+              temp4.push(arg_u4[j]);
+            }
+            for (let k = 0; k < temp4.length; k++) {
+              let count4 = temp4.filter(x => x == temp4[k]).length;
+              if (count4 == 1) {
+                box4.push(temp4[k]);
+              }} 
+            
+            var answer =  box4;
+
+            }
+        
+          else {
+            var answer = box3;
+        }
       }
       else {
         var answer = box2;
@@ -61,4 +84,4 @@ function sym(args) {
   return answer;
 }
 
-console.log(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]));
+console.log(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]));
